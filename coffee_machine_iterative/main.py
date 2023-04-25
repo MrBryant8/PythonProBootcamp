@@ -1,6 +1,5 @@
 from difflib import get_close_matches
 
-
 MENU = {
     "espresso": {
         "ingredients": {
@@ -35,10 +34,10 @@ resources = {
 }
 
 coins = {
-    "quarters" : 0.25,
-    "dimes" : 0.1,
-    "nickles" : 0.05,
-    "pennies" : 0.01
+    "quarters": 0.25,
+    "dimes": 0.1,
+    "nickles": 0.05,
+    "pennies": 0.01
 
 }
 
@@ -60,6 +59,7 @@ def check_sufficiency(order):
     """
     Checks if there are enough ingredients to execute the order
     """
+
     is_sufficient = True
     for key, value in MENU[order]["ingredients"].items():
         if resources[key] < value:
@@ -76,21 +76,22 @@ def insert_coins():
     """
     Takes in the user's input by coin types and returns the sum.
     """
-    sum = 0
+    sum_of_coins = 0
     for key, value in coins.items():
         count = int(input("How many {}?".format(key)))
-        sum += count * value
-    return sum
+        sum_of_coins += count * value
+    return sum_of_coins
 
 
 def check_transaction(order, money):
     """
     Takes in the order type and checks if the inserted money is sufficient.If successful, executes the order
     """
+
     is_successful = True
     if MENU[order]["cost"] > money:
         is_successful = False
-        print ("Sorry that's not enough money.Money refunded.")
+        print("Sorry that's not enough money.Money refunded.")
     else:
         resources["money"] += MENU[order]["cost"]
         if money > MENU[order]["cost"]:
@@ -103,7 +104,6 @@ def check_transaction(order, money):
 def execute_order(order):
     """
     Executes the user's order
-
     """
 
     for key, value in MENU[order]["ingredients"].items():
@@ -117,6 +117,7 @@ while not is_off:
     user_choice = input("What would you like? (espresso/latte/cappuccino):").lower()
     possible_words = list(MENU.keys())
     possible_words.extend(["off", "report"])
+    # returns a list of close matches in case the user has made a typo
     user_choice = get_close_matches(user_choice, possible_words, cutoff=0.8)[0]
 
     if user_choice == "off":
