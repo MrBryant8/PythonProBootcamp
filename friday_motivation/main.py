@@ -17,6 +17,3 @@ if dt.datetime.now().weekday() == 5:
             from_addr=my_email,
             to_addrs="SENDER_EMAIL",
             msg="Subject:A lil bit a motivation\n\n{}".format(message))
-
-
-
