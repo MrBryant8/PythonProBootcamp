@@ -119,7 +119,7 @@ website_data.focus()
 
 email_uname_data = Entry(width=36)
 email_uname_data.grid(column=1, row=2, columnspan=2)
-email_uname_data.insert(0, "mincho.ta@gmail.com")
+email_uname_data.insert(0, "YOUR_DEFAULT_EMAIL")
 
 password = StringVar()
 pw_data = Entry(width=18, show="*", textvariable=password)
