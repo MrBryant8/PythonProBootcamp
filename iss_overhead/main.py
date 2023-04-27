@@ -3,8 +3,8 @@ import requests
 from datetime import datetime as dt
 import time
 
-MY_LAT = 42.194947
-MY_LNG = 24.336280
+MY_LAT = int('YOUR_COOR')
+MY_LNG = int('YOUR_COOR')
 
 MY_EMAIL = "YOUR_EMAIL"
 PASSWORD = "SMTP_PASSWORD"
