@@ -7,7 +7,7 @@ image_path = "data/blank_states_img.gif"
 screen.addshape(image_path)
 t.shape(image_path)
 
-score = 0;
+score = 0
 correct_guesses = set()
 states_to_learn = []
 data = pandas.read_csv("data/50_states.csv")
