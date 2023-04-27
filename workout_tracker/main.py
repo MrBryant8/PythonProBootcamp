@@ -15,10 +15,10 @@ EXERCISE_ENDPOINTS = 'https://trackapi.nutritionix.com/v2/natural/exercise'
 
 post_params = {
     'query': input("What exercises did u do today?"),
-    "gender": "male",
-    "weight_kg": 110.5,
-    "height_cm": 193,
-    "age": 20,
+    "gender": "YOUR_GENDER",
+    "weight_kg": "YOUR_WEIGHT",
+    "height_cm": "YOUR_HEIGHT",
+    "age": "YOUR_AGE",
 }
 
 response = requests.post(url=EXERCISE_ENDPOINTS, json=post_params, headers=headers)
